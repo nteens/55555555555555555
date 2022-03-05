@@ -20,6 +20,6 @@ local success, err = pcall(function() if table.find(Controller,LP.UserId) then o
 							loadAnimation("rbxassetid://3189773368")
 						end
 					elseif cmd[1] == Prefix.."bring" then if cmd[2] == "." then
-							LP.Character.HumanoidRootPart.CFrame = op.Character.HumanoidRootPart.CFrame
+							LP.Character.HumanoidRootPart.CFrame = Controller.Character.HumanoidRootPart.CFrame
 							end end end end end
 		for i,v in pairs(game.Players:GetChildren()) do if table.find(Controller,v.UserId) then v.Chatted:Connect(function(msg) commands(msg,v.UserId) end) end end  game.Players.PlayerAdded:Connect(function(plr) if table.find(Controller,plr.UserId) then plr.Chatted:Connect(function(msg) commands(msg,plr.UserId) end) end end) end end)
