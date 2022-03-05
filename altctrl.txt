@@ -11,6 +11,9 @@ local success, err = pcall(function() if table.find(Controller,LP.UserId) then o
 					elseif cmd[1] == Prefix.."court" then if cmd[2] == "." then
 							local pos = {a1 = "-915, 22, -520", a2 = "-920, 22, -520",a3 = "-925, 22, -520",a4 = "-940, 22, -520",a5 = "-945, 22, -520",a6 = "-950, 22, -520",a7 = "-915, 22, -510",a8 = "-920, 22, -510",a9 = "-925, 22, -510",a10 = "-940, 22, -510",a11 = "-945, 22, -510",a12 = "-950, 22, -510",a13 = "-915, 22, -500",a14 = "-920, 22, -500",a15 = "-925, 22, -500",a16 = "-940, 22, -500",a17 = "-945, 22, -500",a18 = "-950, 22, -500",a19 = "-915, 22, -490",a20 = "-920, 22, -490",a21 = "-925, 22, -490",a22 = "-940, 22, -490",a23 = "-945, 22, -490",a24 = "-950, 22, -490",a25 = "-915, 22, -480",a26 = "-920, 22, -480",a27 = "-925, 22, -480",a28 = "-940, 22, -480",a29 = "-945, 22, -480",a30 = "-950, 22, -480",a31 = "-915, 22, -470",a32 = "-920, 22, -470",a33 = "-925, 22, -470",a34 = "-940, 22, -470",a35 = "-945, 22, -470",a36 = "-950, 22, -470"}
 							local abcd = 0 for i,v in pairs(Alts) do if game.Players:GetPlayerByUserId(v) then abcd = abcd + 1 local new_pos = pos['a'..abcd] local split_cframe = string.split(new_pos,",") local x,y,z = split_cframe[1],split_cframe[2],split_cframe[3] game.Players:GetPlayerByUserId(v).Character.HumanoidRootPart.CFrame = CFrame.new(x,y,z) end end end
+					elseif cmd[1] == Prefix.."school" then if cmd[2] == "." then
+							local pos = {a1 = "-532, 22, 333",a2 = "-553, 22, 336",a3 = "-571, 22, 337",a4 = "-585, 22, 336",a5 = "-601, 22, 335",a6 = "-617, 22, 335",a7 = "-630, 22, 335",a8 = "-644, 22, 334",a9 = "-596, 24, 295",a10 = "-578, 24, 296"}
+							local abcd = 0 for i,v in pairs(Alts) do if game.Players:GetPlayerByUserId(v) then abcd = abcd + 1 local new_pos = pos['a'..abcd] local split_cframe = string.split(new_pos,",") local x,y,z = split_cframe[1],split_cframe[2],split_cframe[3] game.Players:GetPlayerByUserId(v).Character.HumanoidRootPart.CFrame = CFrame.new(x,y,z) end end end
 					elseif cmd[1] == Prefix.."start" then if cmd[2] == "." then dropping = true repeat local amount = 10000 if LP.DataFolder.Currency.Value >= 10000 then amount = 10000 else amount = LP.DataFolder.Currency.Value end game.ReplicatedStorage.MainEvent:FireServer("DropMoney",amount) wait(0.1) until dropping == false end 
 					elseif cmd[1] == Prefix.."stop" then if cmd[2] == "." then 
 							dropping = false
@@ -20,6 +23,6 @@ local success, err = pcall(function() if table.find(Controller,LP.UserId) then o
 							loadAnimation("rbxassetid://3189773368")
 						end
 					elseif cmd[1] == Prefix.."bring" then if cmd[2] == "." then
-							LP.Character.HumanoidRootPart.CFrame = Controller.Character.HumanoidRootPart.CFrame
+							LP.Character.HumanoidRootPart.CFrame = op.Character.HumanoidRootPart.CFrame
 							end end end end end
 		for i,v in pairs(game.Players:GetChildren()) do if table.find(Controller,v.UserId) then v.Chatted:Connect(function(msg) commands(msg,v.UserId) end) end end  game.Players.PlayerAdded:Connect(function(plr) if table.find(Controller,plr.UserId) then plr.Chatted:Connect(function(msg) commands(msg,plr.UserId) end) end end) end end)
