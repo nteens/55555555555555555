@@ -2,7 +2,7 @@ local LP = game.Players.LocalPlayer
 LP.Idled:Connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),game.Workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),game.Workspace.CurrentCamera.CFrame) end)
 function chat(lmao) game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(lmao, 'All') end function xd(a,b,c) game.StarterGui:SetCore("SendNotification", { Title = a; Text = b; Duration = c; }) end local op = false
 local success, err = pcall(function() if table.find(Controller,LP.UserId) then op = true else setfpscap(FPS) print("alt") local dropping = false
-		local x1 = Instance.new("ScreenGui") local x2 = Instance.new("Frame") x1.Parent = game.CoreGui x1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling x2.Name = "x2" x2.Parent = x1 x2.BackgroundColor3 = Color3.fromRGB(0, 0, 0) x2.Position = UDim2.new(-0.34374997, 0, -0.585276067, 0) x2.Size = UDim2.new(0, 10000, 0, 10000)
+		local x1 = Instance.new("ScreenGui") local x2 = Instance.new("Frame") x1.Parent = game.CoreGui x1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling x2.Name = "x2" x2.Parent = x1 x2.BackgroundColor3 = Color3.fromRGB(245, 181, 242) x2.Position = UDim2.new(-0.34374997, 0, -0.585276067, 0) x2.Size = UDim2.new(0, 10000, 0, 10000)
 		function commands(msg,plr)
 			if op == false or table.find(Controller,plr) then msg = string.lower(msg)  cmd = string.split(msg," ") if cmd[2] and cmd[1] then
 					if cmd[1] == Prefix.."admin" then if cmd[2] == "." then
