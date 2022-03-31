@@ -14,7 +14,7 @@ local success, err = pcall(function() if table.find(Controller,LP.UserId) then o
 					elseif cmd[1] == Prefix.."school" then if cmd[2] == "." then
 							local pos = {a1 = "-566, 47, 351",a2 = "-622, 47, 373",a3 = "-622, 47, 344",a4 = "-653, 47, 357",a5 = "-652, 47, 322",a6 = "-652, 47, 281",a7 = "-561, 47, 293",a8 = "-500, 47, 278",a9 = "-496, 47, 328",a10 = "-592, 47, 317"}
 							local abcd = 0 for i,v in pairs(Alts) do if game.Players:GetPlayerByUserId(v) then abcd = abcd + 1 local new_pos = pos['a'..abcd] local split_cframe = string.split(new_pos,",") local x,y,z = split_cframe[1],split_cframe[2],split_cframe[3] game.Players:GetPlayerByUserId(v).Character.HumanoidRootPart.CFrame = CFrame.new(x,y,z) end end end
-					elseif cmd[1] == Prefix.."start" then if cmd[2] == "." then dropping = true repeat local amount = 10000 if LP.DataFolder.Currency.Value >= 10000 then amount = 10000 else amount = LP.DataFolder.Currency.Value end game.ReplicatedStorage.MainEvent:FireServer("DropMoney",amount) wait(0.1) until dropping == false end 
+					elseif cmd[1] == Prefix.."drop" then if cmd[2] == "." then dropping = true repeat local amount = 10000 if LP.DataFolder.Currency.Value >= 10000 then amount = 10000 else amount = LP.DataFolder.Currency.Value end game.ReplicatedStorage.MainEvent:FireServer("DropMoney",amount) wait(0.1) until dropping == false end 
 					elseif cmd[1] == Prefix.."stop" then if cmd[2] == "." then 
 							dropping = false
 						end
